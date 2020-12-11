@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from "react";
 import "./App.css";
 import axios from "axios";
-import {BASE_URL, API_KEY} from "./URL"
+import {BASE_URL, API_KEY} from "./URL";
+import StyledContent from "./Content";
+import StyledDetails from "./Details";
+import StyledImages from "./Image";
+
 
 function App() {
 const [nasaData,setNasaData ] = useState([]);
@@ -16,18 +20,35 @@ const [nasaData,setNasaData ] = useState([]);
       })
     }
     fetchNasaData();
-}, []);
+  }, []);
 
   return (
     <div className="App">
       <div>
-      <h1>NASA Photo of The Day</h1>
+        <h1><span role="img" aria-label='go!'>🚀</span>Photo of The Day! <span role="img" aria-label='go!'>🚀</span> </h1>
       </div>
-      <p>
-        {/* Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>! */}
-      </p>
-    </div>
+
+    <StyledContent>
+      <div className="Content">
+        {/* <StyledDetails> */}
+        <div className = "Details">
+          <h2> {nasaData.title} </h2>
+          <p>{nasaData.date}</p>
+          <p>{nasaData.explanation}</p>
+        </div>
+        {/* </StyledDetails> */}
+
+        {/* <StyledImages> */}
+        <div className = "Image">
+          <img src = {nasaData.url} alt='pic of the day'></img>
+        </div>
+        {/* </StyledImages> */}
+      </div>      
+    </StyledContent>
+        <p>{nasaData.copyright}</p>
+    </div> 
+
+
   );
 }
 
