@@ -13,4 +13,5 @@ export default function ImageData(props) {
 const StyledImage = styled.div`
     max-width: 45%;
     margin: 2%;
+    border-radius: 50%;
 `;

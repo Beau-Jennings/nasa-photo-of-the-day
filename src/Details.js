@@ -19,4 +19,6 @@ const StyledDetails = styled.div`
     flex-direction: column;
     justify-content: center;
     max-width: 45%;
+    margin: 2%;
+    padding: 2%;
 `;
